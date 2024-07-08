@@ -1,8 +1,14 @@
+import BarChartComponent from "./component/BarChartComponent"
+import StatisticsComponent from "./component/StatisticsComponent"
+import TransactionsTable from "./component/TransactionTable"
+
 function App() {
 
   return (
     <>
-      <div className="border text-blue-500">Hello world</div>
+      <TransactionsTable/>
+      <StatisticsComponent/>
+      <BarChartComponent/>
     </>
   )
 }

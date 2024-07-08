@@ -2,10 +2,19 @@ import express,{ Request, Response } from "express";
 import axios from "axios";
 import Product  from "./db";
 import dotenv from "dotenv";
+import cors from "cors"
+
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+const corsOptions = {
+  origin: 'http://localhost:5173', // Your frontend's URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+app.use(cors(corsOptions));
 
 app.get("/initialize", async(req: Request, res: Response)=>{
 
